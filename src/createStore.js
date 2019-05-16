@@ -1,6 +1,10 @@
 import ActionTypes from './utils/actionTypes'
 
-export default function createStore(reducer, preloadedState) {
+export default function createStore(reducer, preloadedState, enhancer) {
+  if (enhancer !== undefined && typeof enhancer === 'function') {
+    return enhancer(createStore)(reducer, preloadedState)
+  }
+  
   let currentState = preloadedState
   let currentReducer = reducer
   let currentListeners = []
