@@ -47,6 +47,8 @@ export default function createStore(reducer, preloadedState, enhancer) {
     dispatch({ type: ActionTypes.REPLACE })
   }
 
+  dispatch({ type: ActionTypes.INIT })
+
   return {
     getState,
     dispatch,

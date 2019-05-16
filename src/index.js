@@ -4,7 +4,7 @@ import combineReducers from './combineReducers'
 import bindActionCreators from './bindActionCreators'
 import applyMiddleware from './applyMiddleware'
 
-export default {
+export {
   createStore,
   compose,
   combineReducers,
